@@ -6,7 +6,6 @@ public class VeyBigSum {
         long sum = 0;
         for (int j : array) {
             sum += j;
-            System.out.println(sum);
         }
 
         return sum;
