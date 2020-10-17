@@ -1,6 +1,6 @@
-package kevin.io.codes.tests;
+package kevin.io.codes;
 
-import kevin.io.codes.CompareTriplets;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.*;
 
 @DisplayName("Test comparison of ArrayList")
 public class CompareTripletsTest {
@@ -18,7 +18,7 @@ public class CompareTripletsTest {
     public void verifyThatWeReturn2Elements() {
         CompareTriplets compareTriplets = new CompareTriplets();
 
-        List<Integer> actualList = compareTriplets.compare(anyListOf(Integer.class), anyListOf(Integer.class));
+        List<Integer> actualList = compareTriplets.compare(anyList(),anyList());
 
         assertEquals(2, actualList.size());
     }

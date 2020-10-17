@@ -1,6 +1,5 @@
-package kevin.io.codes.tests;
+package kevin.io.codes;
 
-import kevin.io.codes.VeyBigSum;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
