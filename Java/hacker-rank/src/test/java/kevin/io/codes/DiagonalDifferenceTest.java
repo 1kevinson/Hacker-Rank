@@ -17,7 +17,7 @@ public class DiagonalDifferenceTest {
         List<List<Integer>> arrayTest = new ArrayList<>(count);
 
         for (int i = 0; i < count ; i++) {
-            arrayTest.add(new ArrayList<>(count));
+            arrayTest.add(new ArrayList<>());
         }
 
         arrayTest.get(0).addAll(List.of(1,2,3));
