@@ -17,7 +17,7 @@ public class Staircase {
 }
 
 
-// Think of 2D Array
+// Think of 2D Array (i+j) > n-1
 
 //         0 1 2 3
 //      0 [ , , ,#]
