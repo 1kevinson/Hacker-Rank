@@ -25,10 +25,10 @@ public class StaircaseTest {
         // Arrange
         final var stairNumber = 4;
         final var expected = String.join(System.lineSeparator(),
-                "   #",
-                "  ##",
-                " ###",
-                "####",
+                  "   #",
+                            "  ##",
+                            " ###",
+                            "####",
                 "");
 
         // Act
