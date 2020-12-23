@@ -4,10 +4,15 @@ import kevin.io.codes.exceptions.NotInBoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -56,10 +61,9 @@ class AppleAndOrangeTest {
         assertEquals(actual, List.of(7, 10, 19));
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {})
+    @Test
     @DisplayName("Should return apple and orange landed in the house")
-    void shouldReturnNumbersOfAppleAndOrangesLandToTheHouse() {
+    void shouldReturnNumbersOfAppleAndOrangesLandToTheHouse() throws NotInBoundException {
         // Given
         final int appleTree = 4;
         final int homeStart = 7;
@@ -67,7 +71,10 @@ class AppleAndOrangeTest {
         final int orangeTree = 17;
 
         // When
+        final int[] actual = AppleAndOrange.countApplesAndOranges(homeStart, homeEnd, appleTree, orangeTree, new int[]{2, 5, -6, 6}, new int[]{-5, 6, 2, -8});
 
         // Then
+        assertEquals(Arrays.toString(actual), Arrays.toString(new int[]{2, 1}));
     }
+
 }
