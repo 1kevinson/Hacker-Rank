@@ -1,4 +1,4 @@
-Feature: Gene
+Feature: Gene Modification
 
   To be able to get the number of character to change to have a steady gene
 
