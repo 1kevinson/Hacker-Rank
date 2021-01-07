@@ -16,7 +16,7 @@ public class StepDefinitions {
     }
 
     @When("performs an ajustement to fix it to steady")
-    public void performs_an_ajustement_to_fix_it_to_steady() {
+    public void performs_an_ajustement_to_fix_it_to_steady() throws Exception {
         final GeneManager manager = new GeneManager();
         actualAnswer = manager.findTheSmallestPossibleStringToModify(gene);
     }
