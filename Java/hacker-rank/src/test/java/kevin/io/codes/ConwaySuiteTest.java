@@ -16,7 +16,7 @@ class ConwaySuiteTest {
     }
 
     public void expectedConwayLines(String line, String... expectedLines) {
-       // assertEquals(String.join("\n", expectedLines), new ConwaySuite().draw(line));
+
     }
 
 }
