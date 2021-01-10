@@ -42,8 +42,6 @@ class GeneManager implements GeneVerification, GeneModification {
 
         if (isGeneSteady(gene.getSequence())) return 0;
 
-
-
         return 5;
     }
 
