@@ -5,13 +5,21 @@ import java.util.Arrays;
 public class Code {
 
     public static void main(String[] args) {
-        String[] test = {"eat", "food", "everyday", "haha"};
-        Byte[] bytes = {10, 20, 15, 22, 35};
-        System.out.println(Arrays.binarySearch(bytes, (byte) 22));
+        Bike bike1 = new Bike();
+        Bike bike2 = new Bike();
     }
 }
 
 
-class CommonClass {
+class Bike {
 
+    private static int count = 1;
+
+    public Bike() {
+        System.out.println("constructor invoked" + count ++);
+    }
+
+    static {
+        System.out.println("Instance initializer invoked");
+    }
 }
