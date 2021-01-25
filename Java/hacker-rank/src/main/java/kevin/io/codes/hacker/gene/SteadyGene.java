@@ -3,6 +3,8 @@ package kevin.io.codes.hacker.gene;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
+
 
 interface GeneVerification {
 
@@ -37,7 +39,9 @@ class GeneManager implements GeneVerification, GeneModification {
 
     @Override
     public int findTheSmallestPossibleStringToModify(Gene gene) throws Exception {
-        if(!isLengthAndStringSequenceAreValid(gene.getSequence()))
+        // TODO: 25/01/2021 Do the algorithm to make tests pass
+
+        if (!isLengthAndStringSequenceAreValid(gene.getSequence()))
             throw new Exception("The gene sequence is not valid");
 
         if (isGeneSteady(gene.getSequence())) return 0;
@@ -49,10 +53,15 @@ class GeneManager implements GeneVerification, GeneModification {
     public boolean checkGeneStringValidity(String geneString) {
         final var splicedSequence = geneString.split("");
 
-        for (String character : splicedSequence)
-            if (!"ATCG".contains(character)) return false;
+        for (String geneChar : splicedSequence) {
+            if (!isGeneCharacterMatches(geneChar)) return false;
+        }
 
         return true;
+    }
+
+    public boolean isGeneCharacterMatches(String geneChar) {
+        return Pattern.matches("[ACGT]", geneChar);
     }
 
     @Override
