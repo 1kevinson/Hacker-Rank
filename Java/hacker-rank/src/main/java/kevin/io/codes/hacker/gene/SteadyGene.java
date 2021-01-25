@@ -14,7 +14,6 @@ interface GeneValidator {
         boolean checkGeneLengthValidity(String geneString);
 
         boolean isGeneSteady(String geneString);
-
     }
 
     interface Modification {
@@ -41,13 +40,14 @@ class GeneManager implements GeneValidator.Verification, GeneValidator.Modificat
 
     @Override
     public int findTheSmallestPossibleStringToModify(Gene gene) throws Exception {
-        // TODO: 25/01/2021 Do the algorithm to make tests pass
 
-        if (!isLengthAndStringSequenceAreValid(gene.getSequence()))
+        if (!isLengthAndStringSequenceAreValid(gene.getSequence())) {
             throw new Exception("The gene sequence is not valid");
+        }
 
         if (isGeneSteady(gene.getSequence())) return 0;
 
+        // TODO: 25/01/2021 Do the algorithm to make tests pass
         return 5;
     }
 
