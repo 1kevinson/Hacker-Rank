@@ -5,21 +5,23 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
+interface GeneValidator {
 
-interface GeneVerification {
+    interface Verification {
 
-    boolean checkGeneStringValidity(String geneString);
+        boolean checkGeneStringValidity(String geneString);
 
-    boolean checkGeneLengthValidity(String geneString);
+        boolean checkGeneLengthValidity(String geneString);
 
-    boolean isGeneSteady(String geneString);
+        boolean isGeneSteady(String geneString);
 
-}
+    }
 
-interface GeneModification {
+    interface Modification {
 
-    int findTheSmallestPossibleStringToModify(Gene gene) throws Exception;
+        int findTheSmallestPossibleStringToModify(Gene gene) throws Exception;
 
+    }
 }
 
 class Gene {
@@ -35,7 +37,7 @@ class Gene {
     }
 }
 
-class GeneManager implements GeneVerification, GeneModification {
+class GeneManager implements GeneValidator.Verification, GeneValidator.Modification {
 
     @Override
     public int findTheSmallestPossibleStringToModify(Gene gene) throws Exception {
