@@ -13,6 +13,7 @@ public class FizzBuzz {
             return "Fizz";
         if (number % 5 == 0)
             return "Buzz";
+
         return String.valueOf(number);
     }
 
@@ -22,6 +23,7 @@ public class FizzBuzz {
         while (minNumber < maxNumber) {
             result.append(evaluateNumber(minNumber++));
         }
+
         return result.append(evaluateNumber(maxNumber)).toString();
     }
 }
