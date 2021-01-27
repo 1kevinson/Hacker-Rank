@@ -52,7 +52,6 @@ public class LeetCode {
     @DisplayName("Test class for LeetCode")
     static class Tests {
 
-
         @Test
         public void testFalseFor2Bracket() {
             assertFalse(LeetCode.formatIsCorrect(")("));
