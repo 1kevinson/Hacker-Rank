@@ -9,7 +9,6 @@ public class ReverseInteger {
 
     public static int go(int number) {
 
-
         String reversedString = new StringBuilder()
                                         .append(Math.abs(number))
                                         .reverse()
