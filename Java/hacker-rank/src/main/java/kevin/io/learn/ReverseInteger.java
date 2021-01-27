@@ -2,35 +2,24 @@ package kevin.io.learn;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
+import static java.lang.Integer.parseInt;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReverseInteger {
 
     public static int go(int number) {
 
-        if (number == 0) return 0;
 
-        int numberTemp;
-        numberTemp = number < 0 ? Math.abs(number) : number;
+        String reversedString = new StringBuilder()
+                                        .append(Math.abs(number))
+                                        .reverse()
+                                        .toString();
 
-        final String[] stringSpliced = String.valueOf(numberTemp).split("");
-        // Create variable list from array
-        final List<String> stringList = new ArrayList<>(Arrays.asList(stringSpliced));
-
-        if (stringList.get(stringList.size() - 1).equals("0")) {
-            stringList.remove(stringList.size() - 1);
+        try {
+            return (number < 0) ? -1 * parseInt(reversedString) : parseInt(reversedString);
+        } catch (NumberFormatException e) {
+            return 0;
         }
-
-        Collections.reverse(stringList);
-
-        final String reversedString = stringList.stream().reduce("", String::concat);
-
-        return number < 0 ? -1 * Integer.parseInt(reversedString) : Integer.parseInt(reversedString);
     }
 
 }
