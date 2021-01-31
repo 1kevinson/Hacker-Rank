@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -175,11 +174,46 @@ class Challenge {
         @Test
         public void shouldHandleTheExample2() {
             Integer expected = 26;
-            Integer actual = Challenge.sjf(Arrays.asList(3,10,10,20,1,2), 2);
+            Integer actual = Challenge.sjf(Arrays.asList(3, 10, 10, 20, 1, 2), 2);
             assertEquals(expected, actual);
         }
     }
 }
 
+class PalindromeNumber {
 
+    static boolean isPalindrome(int number) {
+
+        if (number < 0) return false;
+
+        return number == reversedForm(number);
+    }
+
+    private static int reversedForm(int number) {
+        int reversed = 0;
+
+        while (number > 0) {
+            reversed = (number % 10) + (reversed * 10) ;
+            //noinspection IntegerDivisionInFloatingPointContext
+            number = (int) Math.floor(number / 10);
+        }
+
+        return reversed;
+    }
+
+    static class Tests {
+
+        @Test
+        @DisplayName("Should print true for 121")
+        void shouldReturnTrue() {
+            assertTrue(PalindromeNumber.isPalindrome(121));
+        }
+
+        @Test
+        @DisplayName("Should print true for 121")
+        void shouldReturnFalse() {
+            assertFalse(PalindromeNumber.isPalindrome(65));
+        }
+    }
+}
 
