@@ -10,20 +10,18 @@ public class ReverseInteger {
 
     public static int go(int number) {
 
-        if(!isFollowConstraint(number)) throw new NumberFormatException();
+        String reversedString = new StringBuilder().append(Math.abs(number)).reverse().toString();
 
-        String reversedString = new StringBuilder()
-                .append(Math.abs(number))
-                .reverse()
-                .toString();
-
-
+        try {
             return (number < 0) ? -1 * parseInt(reversedString) : parseInt(reversedString);
+        } catch (NumberFormatException exception) {
+            return 0;
+        }
 
     }
 
-    private static boolean isFollowConstraint(int number){
-        return number >= -Math.pow(2,31) && number <= Math.pow(2,31);
+    private static boolean isFollowConstraint(int number) {
+        return number >= -Math.pow(2, 31) && number <= Math.pow(2, 31);
     }
 
 }
@@ -56,9 +54,13 @@ class ReverseTest {
     }
 
     @Test
+    void shouldReturnCorrectReverseForNumberWith000AtTheEnd() {
+        assertEquals(5, ReverseInteger.go(5000));
+    }
+
+    @Test
     void shouldVerifyTheConstraint() {
         assertThrows(NumberFormatException.class, () -> ReverseInteger.go((int) Math.pow(2, 40)));
     }
-
 
 }
