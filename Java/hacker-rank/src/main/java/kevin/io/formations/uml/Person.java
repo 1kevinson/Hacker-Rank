@@ -1,6 +1,7 @@
 package kevin.io.formations.uml;
 
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -52,4 +53,31 @@ class Meeting {
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
     }
+}
+
+class BankAccount {
+
+    protected String owner;
+    protected BigDecimal balance;
+
+    protected BigDecimal deposit(BigDecimal amount) {
+        return this.balance.add(amount);
+    }
+
+    protected BigDecimal withDrawal(BigDecimal amount) {
+        if (this.balance.compareTo(amount) < 0) return BigDecimal.ZERO;
+
+        return this.balance.subtract(amount);
+    }
+}
+
+class CheckingAccount extends BankAccount{
+
+    private BigDecimal insufficientFundsFee;
+}
+
+class SavingAccount extends BankAccount{
+
+    private BigDecimal annualInterest;
+
 }
