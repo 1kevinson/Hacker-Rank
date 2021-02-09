@@ -217,4 +217,36 @@ class PalindromeNumber {
     }
 }
 
+class LongestCommonPrefix {
 
+    public static String find(String[] strs) {
+        if (strs.length == 0) return "";
+
+        String prefix = strs[0];
+
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        }
+
+        return prefix;
+    }
+
+    @DisplayName("Tests")
+    static class LongestTest {
+
+        @Test
+        @DisplayName("For [flower, flow, flight]")
+        void shouldPrintTheLongestPrefix() {
+            assertEquals("fl", LongestCommonPrefix.find(new String[]{"flower", "flow", "flight"}));
+        }
+
+        @Test
+        @DisplayName("For [Adidas, Adidos, Adidus]")
+        void shouldPrintTheLongestPrefix2() {
+            assertEquals("Adid", LongestCommonPrefix.find(new String[]{"Adidas", "Adidos", "Adidus"}));
+        }
+    }
+}
