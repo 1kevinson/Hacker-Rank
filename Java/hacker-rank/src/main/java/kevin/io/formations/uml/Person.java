@@ -16,9 +16,9 @@ public class Person {
     }
 
     public String getName() throws Exception {
-        if (isNameLengthCorrect()) return this.name;
+        if (!isNameLengthCorrect()) throw new Exception("Name Length is not correct");
 
-        throw new Exception("Name Length is not correct");
+        return this.name;
     }
 
 }
