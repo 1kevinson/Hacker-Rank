@@ -154,3 +154,24 @@ class Page {
         this.number = number;
     }
 }
+
+interface Printer{
+
+    void print();
+}
+
+class LaserPrinter implements Printer{
+
+    @Override
+    public void print() {
+        // Print with laser printer
+    }
+}
+
+class classPrinter implements  Printer {
+
+    @Override
+    public void print() {
+        // Print with simple printer
+    }
+}
