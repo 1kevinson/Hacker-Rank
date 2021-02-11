@@ -155,12 +155,12 @@ class Page {
     }
 }
 
-interface Printer{
+interface Printer {
 
     void print();
 }
 
-class LaserPrinter implements Printer{
+class LaserPrinter implements Printer {
 
     @Override
     public void print() {
@@ -168,10 +168,25 @@ class LaserPrinter implements Printer{
     }
 }
 
-class classPrinter implements  Printer {
+class classPrinter implements Printer {
 
     @Override
     public void print() {
         // Print with simple printer
     }
+}
+
+class Account {
+
+    private LocalDate creationDate;
+    private String status;
+    private AccountType accountType;
+}
+
+enum AccountType {
+
+    ADMIN,
+    USER,
+    CLIENT,
+    OWNER
 }
