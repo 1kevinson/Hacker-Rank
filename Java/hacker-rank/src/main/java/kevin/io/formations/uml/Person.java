@@ -95,7 +95,7 @@ class Passenger {
     private String name;
 }
 
-class Library {
+/* class Library {
 
     private String address;
     private int numberOfBooks;
@@ -111,9 +111,9 @@ class Library {
         this.books.remove(newBook);
         numberOfBooks = this.numberOfBooks - 1;
     }
-}
+} */
 
-class Book {
+/*class Book {
 
     private String title;
     private String author;
@@ -121,5 +121,36 @@ class Book {
 
     public void setLibrary(Library library) {
         this.library = library;
+    }
+}*/
+
+
+class Book {
+
+    private String title;
+    private String author;
+    private final Chapter chapter;
+
+    Book(Chapter chapter) {
+        this.chapter = chapter;
+    }
+}
+
+class Chapter {
+
+    private String title;
+    private final Page page;
+
+    Chapter(Page page) {
+        this.page = page;
+    }
+}
+
+class Page {
+
+    private final int number;
+
+    Page(int number) {
+        this.number = number;
     }
 }
