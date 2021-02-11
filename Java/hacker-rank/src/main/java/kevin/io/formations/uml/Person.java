@@ -3,6 +3,7 @@ package kevin.io.formations.uml;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
@@ -71,13 +72,54 @@ class BankAccount {
     }
 }
 
-class CheckingAccount extends BankAccount{
+class CheckingAccount extends BankAccount {
 
     private BigDecimal insufficientFundsFee;
 }
 
-class SavingAccount extends BankAccount{
+class SavingAccount extends BankAccount {
 
     private BigDecimal annualInterest;
 
+}
+
+class Airplane {
+
+    private String model;
+    private List<Passenger> passengers = new ArrayList<>();
+}
+
+class Passenger {
+
+    private String passengerId;
+    private String name;
+}
+
+class Library {
+
+    private String address;
+    private int numberOfBooks;
+    private List<Book> books = new ArrayList<>();
+
+    public void addBook(Book newBook) {
+        this.books.add(newBook);
+        numberOfBooks = this.numberOfBooks + 1;
+        newBook.setLibrary(this);
+    }
+
+    public void removeBook(Book newBook) {
+        this.books.remove(newBook);
+        numberOfBooks = this.numberOfBooks - 1;
+    }
+}
+
+class Book {
+
+    private String title;
+    private String author;
+    private Library library;
+
+    public void setLibrary(Library library) {
+        this.library = library;
+    }
 }
