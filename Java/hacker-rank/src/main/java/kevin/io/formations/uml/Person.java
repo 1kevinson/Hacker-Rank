@@ -144,6 +144,7 @@ class Chapter {
         this.page = page;
     }
 }
+
 /**/
 class Page {
 
@@ -214,5 +215,15 @@ class User {
         this.dateOfBirth = dateOfBirth;
 
         this.age = LocalDate.now().getYear() - dateOfBirth.getYear();
+    }
+}
+
+
+class SimpleBook {
+
+    private final String author;
+
+    SimpleBook(String author) {
+        this.author = author;
     }
 }
