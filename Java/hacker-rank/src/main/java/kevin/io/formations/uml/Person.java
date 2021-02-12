@@ -26,7 +26,6 @@ public class Person {
         return this.name.trim().length() >= 5;
     }
 
-
 }
 
 class Schedule {
@@ -145,7 +144,7 @@ class Chapter {
         this.page = page;
     }
 }
-
+/**/
 class Page {
 
     private final int number;
@@ -190,3 +189,17 @@ enum AccountType {
     CLIENT,
     OWNER
 }
+
+class Box<T> {
+
+    private T item;
+
+    public T getItem() {
+        return this.item;
+    }
+
+    public void setItem(T item) {
+        this.item = item;
+    }
+}
+
