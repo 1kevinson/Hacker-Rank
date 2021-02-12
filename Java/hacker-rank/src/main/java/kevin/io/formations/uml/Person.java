@@ -203,3 +203,16 @@ class Box<T> {
     }
 }
 
+class User {
+
+    private final String name;
+    private final LocalDate dateOfBirth;
+    private final int age;
+
+    public User(String name, LocalDate dateOfBirth) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+
+        this.age = LocalDate.now().getYear() - dateOfBirth.getYear();
+    }
+}
