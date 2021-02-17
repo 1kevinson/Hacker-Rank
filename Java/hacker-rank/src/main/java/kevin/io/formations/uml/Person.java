@@ -128,24 +128,25 @@ class Book {
 
     private String title;
     private String author;
-    private final Chapter chapter;
+    private final List<Chapter> chapters;
 
-    Book(Chapter chapter) {
-        this.chapter = chapter;
+    Book(List<Chapter> newChapters) {
+        this.chapters = new ArrayList<>();
+        this.chapters.addAll(newChapters);
     }
 }
 
 class Chapter {
 
     private String title;
-    private final Page page;
+    private final List<Page> pages;
 
-    Chapter(Page page) {
-        this.page = page;
+    Chapter(List<Page> newPages) {
+        this.pages = new ArrayList<>();
+        this.pages.addAll(newPages);
     }
 }
 
-/**/
 class Page {
 
     private final int number;
